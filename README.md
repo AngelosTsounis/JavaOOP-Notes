@@ -12,6 +12,8 @@ Utility classes contain:
 3. They only contain public static methods. For example this MathHelper class:
 4. public class MathHelper {
 
+public class MathHelper {
+
 
     private MathHelper() {}
     public static int findMax(int[] numbers) {
@@ -44,6 +46,4 @@ Utility classes contain:
         }
         return sum / numbers.length;
     }
-} 
- 
- 
+}
