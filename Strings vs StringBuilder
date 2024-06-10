@@ -1,1 +1,20 @@
+2. Strings vs StringBuilder();
 
+Strings are complex data type (an object) that represent a number of character values. In reality they are arrays which contain a large value of chars. For example:
+String angel = "ANGEL" which contains the [] = {"A", "N", "G", "E", "L"} chars.
+Strings are immutable, which it means they cannot be changed. If we write:
+angel = "SinTsou" then a new string is being made but the old one stays in place because of it's immutability. A reference of a string is saved in the Heap and the value is saved in the Stack, so if we write a new string the old one stills exists somewhere in the Heap.
+Because of that, strings consume more memory as it creates new Strings (objects) for modification which slow the performance and the execution of the app.
+
+
+Stringbuilder(); in Java is a class used to create a mutable, or in other words, a modifiable succession of characters. StringBuilder class is an alternative to the Java Strings Class, as the Strings class provides an immutable succession of characters.
+On the contrary to Strings, the Stringbuilder(); does not create a new String in the heap when it's being modified, but changes the already existing one. This makes Stringbuilder more efficient and performance-wise choice than Strings.
+
+Stringbuilder angel = new Stringbuilder();
+angel.append("ANGEL");
+System.out.println("String: " + angel.toString());
+
+OR
+
+Stringbuilder sintsou = new Stringbuilder("SinTsou");
+System.out.println("String: " + sintsou.toString());
