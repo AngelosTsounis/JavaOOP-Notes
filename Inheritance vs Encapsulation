@@ -1,0 +1,25 @@
+Inheritance vs Encapsulation
+
+
+1. Encapsulation is one of the pillars of Object Orianted Programming and has to do with not showing sensitive data to the client app. More specifically,
+Encapsulation is a way to restrict the direct access to some components of an object, so users cannot access state values for all of the variables of a particular object. 
+Encapsulation can be used to hide both data members and data functions or methods associated with an instantiated class or object. The point is to "“Make each
+class or class member as inaccessible as possible". In order to achieve encapsulation, we:
+• Make the fields Private
+• In the doc comments we always comment what the method does and not how it does that.
+
+
+2. Inheritance is a way for a class to derive from a super class. For example the class Public class Cat{} can derive from the class Public class Mammals{} which can derive for the class Animals{} which means that they can contain the fields and methods of the super class.
+In addition to that, they can also add their own fields and methods or even Ovverride the existing methods used in one of the super classes. It follows the "IS - A" philosophy, for example Cat IS A Mammal and Mammal IS AN Animal.
+In order to inherit a class from another supper class we need to extends from it. For example: 
+
+Public class Cat extends Mammals{
+  //code
+}  
+AND
+
+Public class Mammals extends Animal {
+ //code
+}
+
+In inheritance, the constructos are not derived in the new class. A good way to use ihneritance is to use the modifier keyword protected which makes the field private for everything outside the package but public inside the same package and can be derived.
