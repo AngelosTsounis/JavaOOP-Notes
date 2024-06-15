@@ -3,7 +3,7 @@
 Strings are complex data type (an object) that represent a number of character values. In reality they are arrays which contain a large value of chars. For example:
 String angel = "ANGEL" which contains the [] = {"A", "N", "G", "E", "L"} chars.
 Strings are immutable, which it means they cannot be changed. If we write:
-angel = "SinTsou" then a new string is being made but the old one stays in place because of it's immutability. A reference of a string is saved in the Heap and the value is saved in the Stack, so if we write a new string the old one stills exists somewhere in the Heap.
+angel = "SinTsou" then a new string is being made but the old one stays in place because of it's immutability. A reference of a string is saved in the Heap, so if we write a new string the old one stills exists somewhere in the Heap.
 Because of that, strings consume more memory as it creates new Strings (objects) for modification which slow the performance and the execution of the app.
 
 
