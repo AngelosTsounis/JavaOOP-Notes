@@ -1,1 +1,46 @@
+Polymorphism in Java is the ability of objects to take many forms. In other words, it allows different objects to respond to the same message or method call in multiple ways.
+There are two core ways we can achieve polymorphism in OOP, Overloading and Overriding.
 
+
+In Overloading, the methods can be in the same class and have the same structure but with changing parameters or access modifiers. Specifically, the methods with the same name can have different numbers of parameters, different types of parameters, or different order of parameters in methods. 
+For example:
+
+public class Hyrule{
+
+public void kokiriVillage(String Link){}
+
+public void kokiriVillage(String Link, String Zelda){}
+
+public void kokiriVillage(String Link, String Zelda, String Sheik){}
+}
+
+In the example above we are calling the same method with different parameters. That method is called overloaded. 
+
+A key difference between Overloaded and Overriding is that static methods can be overloaded but not overided.
+
+
+In overriding, we can call the exact same method in another class without the need to change the parameters. What actually happends here is that the method in the subclass overides the method in the superclass with the same name, parameters and return.
+For example:
+
+public class Hyrule{
+public void kokiriVillage(){
+System.out.println("It's dangerous to go alone, take this.");
+}
+}
+
+
+public class OutsetIsland extends Hyrule{
+
+@Override
+public void kokiriVillage() {
+System.out.println("Actually it's not that dangerous, give them back!");
+}
+}
+
+public class Main {
+ public static void main(String[] args) {
+ OutsetIsland zelda = new OutsetIsland();
+ zelda.kokiriVillage();
+}
+
+The above example will print "Actually it's not that dangerous, give them back!" as the method has been overriden.
