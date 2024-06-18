@@ -1,0 +1,28 @@
+An interface is a completely "abstract class" that is used to group related methods with empty bodies. It follows the IS-A inheritance rule and it forms a contract between the class and the outside world, and this contract is enforced at build time by the compiler.
+For example:
+
+public interface IAngel {
+  void angelAge();
+  public void angelBirthday();
+}
+Those are abstract classes inside the interface, which means they don't have a body.
+In order to use the interface, simply we implement it to the class needed.
+For example:
+
+public class Developer implements IAngel {
+   private int yearsOfExperience;
+   private String progressOfLearning;
+
+     
+  @Override
+   public void angelAge() {
+    System.out.println("He's not that old");
+   }
+
+@Override
+ public void angelBirthday() {
+    System.out.println("Birthday is going to arrive soon!");
+   }
+}
+
+In order for the interface to work it is very important to Override the abstract methods inside of it.
