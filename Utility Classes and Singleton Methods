@@ -37,7 +37,7 @@ public class MathHelper {
     } 
 } 
 
-If a class contains only one istance it's called Singleton and we create the instance within the class. It has a private default constructor and public methods: 
+If a class contains only one instance it's called Singleton and we create the instance within the class. It has a private default constructor and public methods: 
 
 public class Logger {
   private static final Logger INSTANCE = new Logger();
