@@ -1,0 +1,69 @@
+Threads are a fundamental concept in Java (and many other programming languages) that allow multiple sequences of code to run concurrently within a single program.
+A thread is a lightweight process, a single sequence of execution within a program. In Java, every application has at least one thread — the main thread — which is created by the JVM (Java Virtual Machine) at the program's start. 
+Additional threads can be created by the programmer to perform concurrent tasks.
+
+Using threads allows a program to perform multiple tasks simultaneously. 
+This can improve the performance of applications, especially those that are I/O-bound (like reading from a file or network operations) or have tasks that can run independently.
+
+There are two primary ways to create and use threads in Java:
+
+Extending the Thread Class
+Implementing the Runnable Interface
+
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(Thread.currentThread().getId() + " Value: " + i);
+            try {
+                Thread.sleep(1000); // Sleep for 1 second
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+public class ThreadDemo {
+    public static void main(String[] args) {
+        MyThread thread1 = new MyThread();
+        MyThread thread2 = new MyThread();
+
+        thread1.start();
+        thread2.start();
+    }
+}
+
+OR 
+
+
+class MyRunnable implements Runnable {
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(Thread.currentThread().getId() + " Value: " + i);
+            try {
+                Thread.sleep(1000); // Sleep for 1 second
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+public class RunnableDemo {
+    public static void main(String[] args) {
+        Thread thread1 = new Thread(new MyRunnable());
+        Thread thread2 = new Thread(new MyRunnable());
+
+        thread1.start();
+        thread2.start();
+    }
+}
+
+Key Methods in Thread Class
+start(): Starts the thread, causing the JVM to call the thread's run() method.
+run(): Contains the code that constitutes the new thread's task.
+sleep(long millis): Makes the thread sleep for the specified number of milliseconds.
+join(): Waits for the thread to finish its execution.
+interrupt(): Interrupts the thread, setting the interrupt flag to true.
+
+At last, when multiple threads access shared resources, it’s essential to handle synchronization to prevent inconsistent data states.
