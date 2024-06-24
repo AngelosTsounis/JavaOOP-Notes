@@ -26,3 +26,7 @@ public class Developer implements IAngel {
 }
 
 In order for the interface to work it is very important to Override the abstract methods inside of it.
+
+The main difference between an abstract class and an Interface is that abstact classes can be inherited once from a subclass while the Interfaces can implemented multiple times. 
+Abstract classes can not be instantiated, meaning that they cannot create instances but they can implement methods while interfaces cannot. 
+All in All, interfaces stand as a template for the app and hepls with keeping the code clean an organised.
