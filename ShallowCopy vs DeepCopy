@@ -1,6 +1,7 @@
 ShallowCopy method is a way to copy an existing object. When we ShallowCopy we copy all the value types but the references does not change, except for Strings because they're immutable. ShallowCopy will return the same valeus and not reference.
-It's faster than the DeepCopy method but it's actually a lot faster. So when we copy an objectOne(int, String, Obj) and create objectTwo(int, String, Obj) and in the meantime we change the data inputs of the objectOne, for example we set a new int, String and Obj,
-then in the ShallowCopy the int (value) stays still and the String (immutable reference) as well. However, the object (reference) changes in both the objectOne and objectTwo. That happends because the two objects point at the same spot in the heap. 
+It's faster than the DeepCopy method. So when we copy an objectOne(int, String, Obj) and create objectTwo(int, String, Obj) and in the meantime we change the data inputs of the objectOne, for example we set a new int, String and Obj,
+then in the ShallowCopy the int (value) stays still and the String (immutable reference) as well. However, the object (reference) changes in both the objectOne and objectTwo. That happends because the two objects point at the same spot in the heap and the ShallowCopy 
+cannot copy references. 
 
 In DeepCopy we create a new instance of an objectTwo so when we change the data of the objectOne the data of objectTwo stay still. In order to DeepCopy we have to create the new instance in the constructor of the object. It's a slower but more efficient method.
 
