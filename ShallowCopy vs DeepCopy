@@ -1,1 +1,18 @@
-ShallowCopy will return the same valeus and not reference.
+ShallowCopy method is a way to copy an existing object. When we ShallowCopy we copy all the value types but the references does not change, except for Strings because they're immutable. ShallowCopy will return the same valeus and not reference.
+It's faster than the DeepCopy method but it's actually a lot faster.
+
+For example:
+
+public class TestShallowCopy() {
+
+private String
+
+
+}
+
+
+
+
+
+
+ 
