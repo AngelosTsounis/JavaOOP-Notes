@@ -4,7 +4,7 @@ That happends because classes are refenence types and values are value types. In
 Howevery there is a way to make the value types modifiable by using the keyword ref in c#:
 
 public sealed class Example(){
-
+    string ourString = "Hello, World!";
     void DoSomethingWithValueByRef(ref string value)
     {
         value = "Goodbye, World!";
