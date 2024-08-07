@@ -1,0 +1,21 @@
+There are many differences between a class and a value on OOP. Classes are saved on the heap memory as they are reference types and value types are saved on the stack as they create a new value each time a new virable is assigned.
+Mostly however the main difference is that classes are generally mutable and value types are mostly immutable (in some instances they are mutable as well). 
+That happends because classes are refenence types and values are value types. In the first case we can truly modify the original instance and the second case we're not modifing the original instance because we're working with a copy of it. 
+Howevery there is a way to make the value types modifiable by using the keyword ref in c#:
+
+public sealed class Example(){
+
+    void DoSomethingWithValueByRef(ref string value)
+    {
+        value = "Goodbye, World!";
+    }
+
+    Console.WriteLine("Value Before By Ref:");
+    Console.WriteLine(ourString);
+
+    DoSomethingWithValueByRef(ref ourString);
+
+    Console.WriteLine("Value After By Ref:");
+    Console.WriteLine(ourString);
+}
+}
