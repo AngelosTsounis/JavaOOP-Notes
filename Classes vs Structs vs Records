@@ -1,0 +1,48 @@
+In C#, classes, structs, and records are three types of data structures that can be used to model objects and encapsulate data.
+
+1. Classes
+Characteristics:
+Reference Type: Classes are reference types, which means that when you assign an object of a class to a new variable, both variables refer to the same object in memory. Modifying one will affect the other.
+Heap Allocation: Instances of classes are allocated on the heap, which means they are managed by the garbage collector.
+Inheritance: Classes support inheritance, allowing for the creation of complex object hierarchies.
+Mutable by Default: Class instances are mutable by default, meaning their properties can be changed after the object is created.
+Encapsulation: Classes are typically used when you want to encapsulate data and behavior together.
+
+2. Structs
+Characteristics:
+Value Type: Structs are value types, meaning when you assign a struct to a new variable, a copy of the value is made. Modifying one will not affect the other.
+Stack Allocation: Structs are typically allocated on the stack (though they can be part of a heap-allocated object). This makes them more efficient in certain scenarios, such as when dealing with small data structures.
+No Inheritance: Structs do not support inheritance (other than inheriting from System.ValueType), but they can implement interfaces.
+Immutable by Convention: Although structs can be mutable, it's common practice to make them immutable by not providing setters for their properties.
+Lightweight: Structs are often used for small, lightweight objects where performance is critical.
+
+
+3. Records
+Characteristics:
+Reference Type (by default): Records are reference types like classes but are designed to represent immutable data. However, C# 10 introduced struct records, which are value types.
+Immutable by Default: Records are immutable by default, meaning their properties cannot be changed after creation. You can change this behavior if needed, but immutability is a key feature.
+Value-Based Equality: Records override Equals and GetHashCode to provide value-based equality semantics (i.e., two records are equal if their data is equal).
+Concise Syntax: Records provide a more concise syntax for defining data structures, especially with positional records.
+With-Expression Support: Records support the with expression, which allows for creating a copy of a record with some properties changed.
+
+
+Use Classes when you need:
+
+Complex behaviors and methods.
+Inheritance and polymorphism.
+Objects with a long lifespan that will be managed by the garbage collector.
+Mutable objects where different references need to reflect changes.
+
+Use Structs when you need:
+
+Small, simple, and lightweight objects.
+Value semantics (each instance is independent).
+High-performance scenarios where avoiding heap allocation is crucial.
+Immutable types that represent a single value or a small group of values.
+
+Use Records when you need:
+
+Immutable data structures that represent data transfer objects (DTOs), configuration, or any data that shouldn't change after being created.
+Value-based equality where objects should be compared by their content rather than by their reference.
+Concise and readable code for simple data objects.
+Reference semantics but with immutability and value-based equality (for default records).
