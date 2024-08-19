@@ -1,0 +1,73 @@
+Tuples are lightweight Data Transfer Objcets (DTOs) that can contain multiple values of different types.
+
+In c#, they come in two different flavours:
+
+1. System.Tuples:
+-reference type
+- immutable
+- values are properties
+
+2. System.ValueTuple: 
+- value type
+- mutable
+- values are fields
+
+Examples: 
+
+//System.Tuple
+Tuple<int, string> tuple = new Tuple<int,string>(1,"one")
+
+//System.ValueTuple
+ValueTuple<int, string> valueTuple = new ValueTuple<int,string>(1,"one");
+ValueTuple<int, string> valueTuple2 = new (1,"one");
+ValueTuple<int, string> valueTuple3 = (1,"one");
+var valueTuple4 = (1,2,3,4,5,6,7,8,9,10,...)
+
+
+Tuples are useful when you need to return multiple values from a method or when you want to group together a few variables temporarily. They offer a simple and convenient way to work with a small set of related data.
+
+1. Basic Tuples:
+You can create a tuple using the Tuple class or, more commonly in modern C#, with a tuple literal using parentheses.
+
+Using the Tuple class:
+var tuple = Tuple.Create(1, "apple", true);
+Console.WriteLine(tuple.Item1); // Outputs: 1
+Console.WriteLine(tuple.Item2); // Outputs: apple
+Console.WriteLine(tuple.Item3); // Outputs: True
+
+
+2. Named Tuples:
+While using Item1, Item2, etc., is fine, it can be a bit unclear, especially in more complex scenarios. That's where named tuples come in.
+var person = (Name: "John", Age: 30, IsStudent: false);
+Console.WriteLine(person.Name);  // Outputs: John
+Console.WriteLine(person.Age);   // Outputs: 30
+Console.WriteLine(person.IsStudent); // Outputs: False
+
+
+Returning Multiple Values from a Method
+One common use case for tuples is returning multiple values from a method without having to create a separate class or structure.
+public (int Sum, int Product) Calculate(int a, int b)
+{
+    return (a + b, a * b);
+}
+
+// Usage
+var result = Calculate(3, 4);
+Console.WriteLine(result.Sum);      // Outputs: 7
+Console.WriteLine(result.Product);  // Outputs: 12
+
+
+
+Deconstructing Tuples
+You can also deconstruct a tuple, which means you can break it down into individual variables.
+var (sum, product) = Calculate(3, 4);
+Console.WriteLine(sum);      // Outputs: 7
+Console.WriteLine(product);  // Outputs: 12
+
+Summary
+Tuples in C# are a versatile tool for grouping related data without the overhead of creating custom types. Whether you're returning multiple values from a method, grouping variables temporarily, or just looking for a quick way to bundle data, tuples offer a simple and powerful solution.
+
+We can also declare a global tuple and use it in our codebase:
+
+global using NicksColor = (byte R, byte G, byte B);
+NicksColor nicksColor = (255, 0, 0);
